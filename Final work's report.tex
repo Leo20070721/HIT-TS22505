@@ -1,10 +1,15 @@
 %文章初始设置----------------------------------------------------------------------------------------------------------------
 \documentclass[12pt,a4paper,oneside,UTF8]{ctexart}
-\usepackage{amsmath, amsthm, amssymb, graphicx}
+\usepackage{amsmath, amsthm, amssymb}
 \usepackage[T1]{fontenc}
 \usepackage{authblk}
 \usepackage{listings}
 \usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{graphicx, float}
+\graphicspath{ {./PNG_files} }
+
+\usepackage[ruled,linesnumbered]{algorithm2e}
 
 \setmainfont{Times New Roman}
 \usepackage{xeCJK}
@@ -204,12 +209,65 @@
 
 栅格法的优点在于其简单性和易于计算机存储与处理的特性。
 \subsubsection{实例分析与示例伪代码}
-我们任意地绘制一张分层设色地形图，
-以120米高度为分界高度，
-120米以下整理为可飞区，
-120米以上为禁飞区。
+我们任意地绘制一张分层地形图。
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{/map-1/map-1}
+  \caption{分层地形图}
+  \label{fig:map-1}
+\end{figure}
 
+首先进行栅格化。
+
+\begin{algorithm}[h]
+  \caption{地图栅格化}\label{algorithm}
+  \KwData{原地图 $map$, 地图高度 $L$, 地图宽度 $W$, 栅格大小 $X$}
+  \KwResult{栅格化地图 $grid$}
+\end{algorithm}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\textwidth]{/map-1/map-1-grid}
+  \caption{栅格化后的地图}
+  \label{fig:map-1-grid}
+\end{figure}
+
+之后以120m高度作为分界，
+将栅格地图进行二值化处理:
+
+\begin{algorithm}[H]
+  \caption{地图栅格二值化}\label{algorithm}
+  \KwData{原栅格地图 $grid$, 界高度$h$}
+  \KwResult{二值化栅格化地图 $fin$}
+\end{algorithm}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{/map-1/map-1-grid-noted}
+  \caption{完成栅格法环境建模的地图}
+  \label{fig:map-1-grid-noted}
+\end{figure}
+
+这样就完成了航迹图栅格化，即环境空间建模。
+
+%航迹规划算法-------------------------
+\newpage\section{航迹规划算法与实现}
+\subsection{传统基本航迹规划算法}
+\subsubsection{模拟算法}
+\subsubsection{Dijkstra单源最短路算法}
+\subsubsection{IDA*搜索算法}
+\subsection{现代智能航迹规划算法}
+\subsubsection{遗传算法}
+\subsubsection{蚁群算法(ACA)}
+\subsubsection{改进灰狼算法(IGWO)}
+\subsubsection{布谷鸟搜索算法(CS)}
+%航迹平滑算法-------------------------
+\newpage\section{航迹平滑算法}
+\subsection{三次样条插值法(Spline 插值)}
+\subsection{贝塞尔曲线法(Bézier Curve)}
+%航迹平滑算法-------------------------
+\newpage\section{结论}
 %参考文献库--------------------------------------------------------
 \newpage\begin{thebibliography}{20}
 \bibitem{ref1}中华人民共和国交通运输部.2024年交通运输行业发展统计公报[R/OL].(2025-06-12)[2025-10-04].https://xxgk.mot.gov.cn/2020/jigou/zhghs/202506/t20250610\_4170228.html.

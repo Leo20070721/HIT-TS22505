@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.28)  10 OCT 2025 21:48
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.28)  14 OCT 2025 22:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -279,25 +279,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks28
-) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: xetex.def on input line 106.
- (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
-))
-\Gin@req@height=\dimen184
-\Gin@req@width=\dimen185
-) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+)) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116.
  (d:/Program Files/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -309,19 +291,22 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@Maxaffil=\count309
 \c@authors=\count310
 \c@affil=\count311
-) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/listings/listings.sty (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
 \lst@mode=\count312
 \lst@gtempboxa=\box58
 \lst@token=\toks29
 \lst@length=\count313
-\lst@currlwidth=\dimen186
+\lst@currlwidth=\dimen184
 \lst@column=\count314
 \lst@pos=\count315
-\lst@lostspace=\dimen187
-\lst@width=\dimen188
+\lst@lostspace=\dimen185
+\lst@width=\dimen186
 \lst@newlines=\count316
 \lst@lineno=\count317
-\lst@maxwidth=\dimen189
+\lst@maxwidth=\dimen187
  (d:/Program Files/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
@@ -346,7 +331,9 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package xcolor Warning: Package option `usenames' is obsolete and ignored on input line 265.
 
 Package xcolor Info: Driver file: xetex.def on input line 274.
-(d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+(d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
@@ -357,6 +344,79 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+)
+\Gin@req@height=\dimen188
+\Gin@req@width=\dimen189
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count322
+\float@exts=\toks30
+\float@box=\box60
+\@float@everytoks=\toks31
+\@floatcapt=\box61
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count323
+ (d:/Program Files/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip68
+ (d:/Program Files/texlive/2025/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count324
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip69
+\skiplinenumber=\skip70
+\skiprule=\skip71
+\skiphlne=\skip72
+\skiptext=\skip73
+\skiplength=\skip74
+\algomargin=\skip75
+\skipalgocfslide=\skip76
+\algowidth=\dimen190
+\inoutsize=\dimen191
+\inoutindent=\dimen192
+\interspacetitleruled=\dimen193
+\interspacealgoruled=\dimen194
+\interspacetitleboxruled=\dimen195
+\algocf@ruledwidth=\skip77
+\algocf@inoutbox=\box62
+\algocf@inputbox=\box63
+\AlCapSkip=\skip78
+\AlCapHSkip=\skip79
+\algoskipindent=\skip80
+\algocf@nlbox=\box64
+\algocf@hangingbox=\box65
+\algocf@untilbox=\box66
+\algocf@skipuntil=\skip81
+\algocf@capbox=\box67
+\algocf@lcaptionbox=\skip82
+\algoheightruledefault=\skip83
+\algoheightrule=\skip84
+\algotitleheightruledefault=\skip85
+\algotitleheightrule=\skip86
+\c@algocfline=\count325
+\c@algocfproc=\count326
+\c@algocf=\count327
+\algocf@algoframe=\box68
+\algocf@algobox=\box69
 )
 
 Package fontspec Info: 
@@ -414,25 +474,29 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (d:/Program Files/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-) (./Final work's report.aux)
+) (./Final work's report.aux
+
+LaTeX Warning: Label `algorithm' multiply defined.
+
+)
 \openout1 = `"Final work's report.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -440,62 +504,62 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 72.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 72.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 72.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 72.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 72.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 72.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 72.
-LaTeX Font Info:    Redeclaring math accent \check on input line 72.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 72.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 72.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 72.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 72.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 72.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 77.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 77.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 77.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 77.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 77.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 77.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 77.
+LaTeX Font Info:    Redeclaring math accent \check on input line 77.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 77.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 77.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 77.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 77.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 77.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 72.
+(Font)              `operators' in the math version `normal' on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 72.
+(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 77.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 72.
+(Font)              `operators' in the math version `bold' on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 72.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 72.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 72.
+(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 72.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 72.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 72.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 72.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 72.
+(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 72.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 72.
-\c@lstlisting=\count322
-LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 77.
+\c@lstlisting=\count328
+LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
  (d:/Program Files/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
  (d:/Program Files/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -544,45 +608,73 @@ Package fontspec Info:
 [5]
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+File: ./PNG_files//map-1/map-1.png Graphic file (type bmp)
+<./PNG_files//map-1/map-1.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./PNG_files//map-1/map-1-grid.png Graphic file (type bmp)
+<./PNG_files//map-1/map-1-grid.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./PNG_files//map-1/map-1-grid-noted.png Graphic file (type bmp)
+<./PNG_files//map-1/map-1-grid-noted.png>
+
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 []\TU/SimSun(1)/m/n/12 中 华 人 民 共 和 国 交 通 运 输 部\TU/TimesNewRoman(0)/m/n/12 .2024 \TU/SimSun(1)/m/n/12 年 交 通 运 输
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 \TU/SimSun(1)/m/n/12 行 业 发 展 统 计 公 报 \TU/TimesNewRoman(0)/m/n/12 [R/OL].(2025-06-12)[2025-10-
  []
 
 
-Overfull \hbox (25.21289pt too wide) in paragraph at lines 215--216
+Overfull \hbox (25.21289pt too wide) in paragraph at lines 273--274
 \TU/TimesNewRoman(0)/m/n/12 04].https://xxgk.mot.gov.cn/2020/jigou/zhghs/202506/t20250610_4170228.html. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 []\TU/SimSun(1)/m/n/12 王 硕\TU/TimesNewRoman(0)/m/n/12 , \TU/SimSun(1)/m/n/12 李 洋\TU/TimesNewRoman(0)/m/n/12 , \TU/SimSun(1)/m/n/12 赵 蕴 龙\TU/TimesNewRoman(0)/m/n/12 , \TU/SimSun(1)/m/n/12 等\TU/TimesNewRoman(0)/m/n/12 . \TU/SimSun(1)/m/n/12 无 人 机 航 迹 规 划 算 法
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 \TU/SimSun(1)/m/n/12 综 述 \TU/TimesNewRoman(0)/m/n/12 [J/OL]. \TU/SimSun(1)/m/n/12 哈 尔 滨 工 程 大 学 学 报\TU/TimesNewRoman(0)/m/n/12 ,1-14[2025-10-
  []
 
 
 
-[7] (./Final work's report.aux)
+[12] (./Final work's report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 10570 strings out of 473832
- 270796 string characters out of 5726732
- 854068 words of memory out of 5000000
- 33457 multiletter control sequences out of 15000+600000
+ 11772 strings out of 473832
+ 292049 string characters out of 5726732
+ 881282 words of memory out of 5000000
+ 34632 multiletter control sequences out of 15000+600000
  572670 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,5n,111p,451b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,8n,111p,441b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Final work's report.xdv (7 pages, 60284 bytes).
+Output written on Final work's report.xdv (12 pages, 77736 bytes).
