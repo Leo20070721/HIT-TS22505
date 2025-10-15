@@ -9,7 +9,7 @@
 \usepackage{graphicx, float}
 \graphicspath{ {./PNG_files} }
 
-\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage[ruled,linesnumbered,lined,boxed,linesnumbered]{algorithm2e}
 
 \setmainfont{Times New Roman}
 \usepackage{xeCJK}
@@ -37,6 +37,7 @@
 \makeatletter
 \renewcommand\@biblabel[1]{[#1]\hfill}
 \makeatother
+\renewcommand\refname{}
 
 % 定义颜色
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -200,18 +201,23 @@
 即将实际物理空间抽象成算法能够处理的抽象空间的过程。
 \subsection{栅格法环境建模}
 \subsubsection{栅格法的概念}
-栅格法是一种常用的环境建模方法，通过将连续的空间离散化为有限数量的栅格单元，简化复杂环境的表示。这种方法广泛应用于路径规划和机器人导航领域，尤其适用于二维环境的建模。
+栅格法是一种常用的环境建模方法，
+通过将连续的空间离散化为连续有限数量的栅格单元，
+简化复杂环境的表示。
+这种方法广泛应用于路径规划和机器人导航领域，
+尤其适用于二维环境的建模。
 
 栅格法的核心思想是将环境划分为若干相同大小的网格，
 每个网格用状态值表示是否被占用。
-占用状态通常用1表示障碍物，
-空闲状态用0表示可通行区域。
+通常用1/True的占用状态表示障碍物，
+用0/False的空闲状态表示可通行区域。
+其本质为表格。
 
 栅格法的优点在于其简单性和易于计算机存储与处理的特性。
 \subsubsection{实例分析与示例伪代码}
 我们任意地绘制一张分层地形图。
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{/map-1/map-1}
   \caption{分层地形图}
@@ -220,13 +226,25 @@
 
 首先进行栅格化。
 
-\begin{algorithm}[h]
-  \caption{地图栅格化}\label{algorithm}
-  \KwData{原地图 $map$, 地图高度 $L$, 地图宽度 $W$, 栅格大小 $X$}
-  \KwResult{栅格化地图 $grid$}
+\begin{algorithm}[H]
+  \caption{地图栅格化}\label{algorithm-grid}
+  \KwData{原地图 $Map$, 地图高度 $L$, 地图宽度 $W$, 栅格大小 $X$}
+  \KwResult{栅格 $Grid$}
+
+  Initializtion\;
+  Get Datas\;
+  $Grid$.Height=$ceil(L/X)$\;
+  $Grid$.Width=$ceil(W/X)$\;
+  \For{$i\leftarrow 1$ \KwTo $Grid$.Height}{
+    \For{$j\leftarrow 1$ \KwTo $Grid$.Width}{
+      $Grid$.creatSquare($i$,$j$,$X$)\;
+      $Grid$ [$i$] [$j$] .Hight=maxOfMap($Map$,$i*X$,$(i+1)*X$,$j*X$,$(j+1)*X$)\;
+    }
+  }
+  showPictures($Map$,$Grid$)\;
 \end{algorithm}
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{/map-1/map-1-grid}
   \caption{栅格化后的地图}
@@ -237,9 +255,24 @@
 将栅格地图进行二值化处理:
 
 \begin{algorithm}[H]
-  \caption{地图栅格二值化}\label{algorithm}
-  \KwData{原栅格地图 $grid$, 界高度$h$}
-  \KwResult{二值化栅格化地图 $fin$}
+  \caption{地图栅格二值化}\label{algorithm-grid-noted}
+  \KwData{原地图 $Map$, 栅格 $Grid$, 分界高度$HSet$}
+
+  \For{$i\leftarrow 1$ \KwTo $Grid$.Hight}{
+    \For{$j\leftarrow 1$ \KwTo $Grid$.Width}{
+      \If{ $Grid$[$i$][$j$].Hight $>$ HSet}{
+        Grid[$i$][$j$].RefuseFlag=$True$\;
+        Grid[$i$][$j$].Color=$0x46831a$\;
+        Grid[$i$][$j$].Alpha=$48$\;
+      }
+      \Else{
+        Grid[$i$][$j$].RefuseFlag=$False$\;
+        Grid[$i$][$j$].Color=$0x831a1a$\;
+        Grid[$i$][$j$].Alpha=$48$\;
+      }
+    }
+  }
+  showPictures(Map,Grid)\;
 \end{algorithm}
 
 \begin{figure}[H]
@@ -250,11 +283,85 @@
 \end{figure}
 
 这样就完成了航迹图栅格化，即环境空间建模。
+\subsection{图形法环境建模}
+\subsubsection{图形法的概念}
+图形法也是一种常用的环境建模方法，
+通过将连续的空间离散化为非连续有限数量的点/块单元，
+简化复杂环境的表示。
+这种方法广泛应用于路径规划和导航领域，
+尤其适用于二维且极广范围的建模。
 
+图形法的核心思想是将环境划分为若干可通行点位，
+并用道路连接，
+每个道路用量值表示长度/耗时/代价等。
+其本质为无向图。
+
+图形法的优点同样在于其简单性和易于计算机存储与处理的特性，
+并且可以大幅缩小问题规模。
+\subsubsection{图形法的使用}
+图形法环境建模有手动标记和自动识别两种方式。
+
+手动标记即人工标记可通行点位并设置点间可通行道路，
+输入计算机后自动处理。
+自动识别一般使用四叉树算法等进行障碍物多边形化简化，
+然后自动生成可通行点位并用道路连接。
+
+本文使用手动标记法，
+辅以自动处理程序完成图形法环境建模。
+\subsubsection{实例分析与示例伪代码}
+我们仍使用上一节栅格化时的分层地形图。
+
+人工标记地图的可通行点位和道路：
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{/map-2/map-2-map}
+  \caption{图形化后的地形图}
+  \label{fig:map-2-map}
+\end{figure}
+
+利用自动处理程序将分散的点与路数据合并为一张无向图：
+
+\begin{algorithm}[H]
+  \caption{自动记录图形化地图}\label{algorithm-map-noted}
+  \KwData{点集 $\bf{N}$, 路集 $R$}
+  \KwOut{无向图 $D$}
+
+  \For{$i\leftarrow 1$ \KwTo $N$.Num}{
+    $D$.Dot.pushback($N$[$i$])\;
+  }
+  \For{$i\leftarrow 1$ \KwTo $R$.Num}{
+    $D$.Rd.newRoad($R$.From,$R$.To,$R$.Value)\;
+  }
+\end{algorithm}
+
+这样就完成了航迹图图形化，即环境空间建模。
 %航迹规划算法-------------------------
 \newpage\section{航迹规划算法与实现}
 \subsection{传统基本航迹规划算法}
+\subsubsection{概论}
+传统基本航迹规划算法是基于搜索算法与最短路算法发展的，
+属于计算机算法学中的图论部分。
+
+其特点为：
+基于数学分析，
+处理速度较快，
+代码复杂度较小，
+适合偏小规模且静态的问题。
+
 \subsubsection{模拟算法}
+模拟算法严格上并不属于一种算法，
+它是处理静态需求静态航图的几种问题的方法，
+例如矩形简单网格、多边形简单网格、矩形双重网格、环绕飞行等。
+
+此处我们以矩形简单网格/2D往复式航迹规划方法作为实例演示模拟算法。
+
+以哈尔滨工业大学二校区功夫菜园鸟瞰图为例：
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{/map-3/DJI_20250927104514_0043_D_Farm}
+  \caption{功夫菜园鸟瞰图}
+  \label{fig:map-3-farm}
+\end{figure}
 \subsubsection{Dijkstra单源最短路算法}
 \subsubsection{IDA*搜索算法}
 \subsection{现代智能航迹规划算法}
@@ -269,10 +376,16 @@
 %航迹平滑算法-------------------------
 \newpage\section{结论}
 %参考文献库--------------------------------------------------------
-\newpage\begin{thebibliography}{20}
+\newpage\section{参考文献}\begin{thebibliography}{20}
 \bibitem{ref1}中华人民共和国交通运输部.2024年交通运输行业发展统计公报[R/OL].(2025-06-12)[2025-10-04].https://xxgk.mot.gov.cn/2020/jigou/zhghs/202506/t20250610\_4170228.html.
 \bibitem{ref2}欧林联.无人机自动化巡检在城市桥梁运维中的探索和应用[J].福建建设科技,2025,(05):97-100.DOI:CNKI:SUN:FJJK.0.2025-05-024.
 \bibitem{ref3}王硕,李洋,赵蕴龙,等.无人机航迹规划算法综述[J/OL].哈尔滨工程大学学报,1-14[2025-10-04].https://link.cnki.net/urlid/23.1390.U.20250616.1544.003.
 \end{thebibliography}
+%原创性声明-------------------------
+\newpage\section{原创性声明}
+%致谢-------------------------
+\newpage\section{致谢}
+%附录-------------------------
+\newpage\section{附录}
 
 \end{document}
