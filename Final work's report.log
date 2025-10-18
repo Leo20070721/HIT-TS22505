@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.28)  18 OCT 2025 21:19
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.28)  18 OCT 2025 21:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -721,11 +721,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 794--798
 
 
 [21]
-Overfull \hbox (14.11914pt too wide) in paragraph at lines 807--808
-[]\TU/SimSun(1)/m/n/12 电 子 版 详 稿 请 参 考\TU/TimesNewRoman(0)/m/n/12 ./ssrn-2340905.pdf \TU/SimSun(1)/m/n/12 或 \TU/TimesNewRoman(0)/m/n/12 https://doi.org/10.2139/ssrn.2340905 
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 809--811
 
  []
@@ -757,4 +752,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  93i,18n,111p,618b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Final work's report.xdv (32 pages, 291776 bytes).
+Output written on Final work's report.xdv (32 pages, 291568 bytes).
