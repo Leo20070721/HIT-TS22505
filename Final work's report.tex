@@ -72,6 +72,7 @@
 
 \affil[1]{哈尔滨工业大学\ 《无人机摄像及应用》(TS22505)2025秋季班\  第三组}
 \affil[2]{哈尔滨工业大学\  交通科学与工程学院\  桥梁结构安全评定青年科学家工作室}
+\affil[*]{班级、学号等信息请参考文后致谢部分}
 \date{}
 
 %内容区----------------------------------------------------------------------------------------------------------------
@@ -79,7 +80,7 @@
 %封面--------------------------------------------------------
 \pagestyle{empty}\maketitle\thispagestyle{empty}
 %摘要--------------------------------------------------------
-\begin{abstract}
+\newpage\setcounter{page}{1}\pagenumbering{Roman}\pagestyle{plain}\begin{abstract}
     \addcontentsline{toc}{section}{摘要}
     在全球桥梁数目与规模逐渐增大的背景下，
     传统的纯人力方式与手动操控无人机方法已经难以维持多种工作进行。
@@ -106,7 +107,7 @@
 
 \end{abstract}
 \cnkeywords{无人机，航迹规划，规划算法，最优化问题}
-\begin{enabstract}
+\newpage\begin{enabstract}
     Path planning is an essential component of autonomous drone control.  
     In this regard,  
     this paper will conduct the following research on the path planning issue:  
@@ -131,7 +132,7 @@
 %正文--------------------------------------------------------
 
 %绪论-------------------------
-\newpage\section{绪论}
+\newpage\setcounter{page}{1}\pagenumbering{arabic}\section{绪论}
 截至2025年末，
 我国公路桥梁数量已经超过110.81万座\cite{ref1}。
 桥梁正式投用后，
@@ -228,17 +229,15 @@
 
 \begin{algorithm}[H]
   \caption{地图栅格化}\label{algorithm-grid}
-  \KwData{原地图 $Map$, 地图高度 $L$, 地图宽度 $W$, 栅格大小 $X$}
+  \KwData{原地图 $Map$, 栅格大小 $X$}
   \KwResult{栅格 $Grid$}
 
-  Initializtion\;
-  Get Datas\;
-  $Grid$.Height=$ceil(L/X)$\;
-  $Grid$.Width=$ceil(W/X)$\;
+  $Grid$.Height $\leftarrow$ $ceil(Map.Length/X)$\;
+  $Grid$.Width $\leftarrow$ $ceil(Map.Width/X)$\;
   \For{$i\leftarrow 1$ \KwTo $Grid$.Height}{
     \For{$j\leftarrow 1$ \KwTo $Grid$.Width}{
       $Grid$.creatSquare($i$,$j$,$X$)\;
-      $Grid$ [$i$] [$j$] .Hight=maxOfMap($Map$,$i*X$,$(i+1)*X$,$j*X$,$(j+1)*X$)\;
+      $Grid$.Data [$i$] [$j$] .Hight $\leftarrow$ maxOfMap($Map$,$i*X$,$(i+1)*X$,$j*X$,$(j+1)*X$)\;
     }
   }
   showPictures($Map$,$Grid$)\;
@@ -261,14 +260,14 @@
   \For{$i\leftarrow 1$ \KwTo $Grid$.Hight}{
     \For{$j\leftarrow 1$ \KwTo $Grid$.Width}{
       \If{ $Grid$[$i$][$j$].Hight $>$ HSet}{
-        Grid[$i$][$j$].RefuseFlag=$True$\;
-        Grid[$i$][$j$].Color=$0x46831a$\;
-        Grid[$i$][$j$].Alpha=$48$\;
+        Grid[$i$][$j$].RefuseFlag $\leftarrow$ $True$\;
+        Grid[$i$][$j$].Color $\leftarrow$ $0x46831a$\;
+        Grid[$i$][$j$].Alpha $\leftarrow$ $48$\;
       }
       \Else{
-        Grid[$i$][$j$].RefuseFlag=$False$\;
-        Grid[$i$][$j$].Color=$0x831a1a$\;
-        Grid[$i$][$j$].Alpha=$48$\;
+        Grid[$i$][$j$].RefuseFlag $\leftarrow$ $False$\;
+        Grid[$i$][$j$].Color $\leftarrow$ $0x831a1a$\;
+        Grid[$i$][$j$].Alpha $\leftarrow$ $48$\;
       }
     }
   }
@@ -327,10 +326,10 @@
   \KwOut{无向图 $D$}
 
   \For{$i\leftarrow 1$ \KwTo $N$.Num}{
-    $D$.Dot.pushback($N$[$i$])\;
+    $D$.Dot.pushback($N$.Data[$i$])\;
   }
   \For{$i\leftarrow 1$ \KwTo $R$.Num}{
-    $D$.Rd.newRoad($R$.From,$R$.To,$R$.Value)\;
+    $D$.Rd.newRoad($R$.Data[$i$].From,$R$.Data[$i$].To,$R$.Data[$i$].Value)\;
   }
 \end{algorithm}
 
@@ -350,20 +349,130 @@
 
 \subsubsection{模拟算法}
 模拟算法严格上并不属于一种算法，
-它是处理静态需求静态航图的几种问题的方法，
+它是处理几种静态需求问题的方法，
 例如矩形简单网格、多边形简单网格、矩形双重网格、环绕飞行等。
 
 此处我们以矩形简单网格/2D往复式航迹规划方法作为实例演示模拟算法。
 
 以哈尔滨工业大学二校区功夫菜园鸟瞰图为例：
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{/map-3/DJI_20250927104514_0043_D_Farm}
   \caption{功夫菜园鸟瞰图}
   \label{fig:map-3-farm}
 \end{figure}
+
+\begin{algorithm}[H]
+  \caption{2D往复式航迹规划}\label{traditional-simulation}
+  \KwData{地图(规划区) $Map$, 相邻航线间距 $D$, 转向区外延距离 $E$}
+  \KwOut{航迹规划点集 $F$}
+
+  $N$ $\leftarrow$ ceil($Map$.Width/$D$)\;
+  \For{$i \leftarrow 0$ \KwTo $N-1$}{
+
+    \If{$i\%2=0$}{
+
+      \If{$i \ne 0$}{
+        F.newPoint($Map$.Begin.La-$E$,$Map$.Begin.Lo+$i$*$D$)\;
+      }
+      F.newPoint($Map$.Begin.La,$Map$.Begin.Lo+i*$D$)\;
+      F.newPoint($Map$.End.La,$Map$.Begin.Lo+i*$D$)\;
+      \If{$i\ne N-1$}{
+        F.newPoint($Map$.End.La+$E$,$Map$.Begin.Lo+$i$i*$D$)\;
+      }
+
+    }
+    \Else{
+
+      \If{$i\ne N-1$}{
+        F.newPoint($Map$.End.La+$E$,$Map$.Begin.Lo+$i$i*$D$)\;
+      }
+      F.newPoint($Map$.End.La,$Map$.Begin.Lo+i*$D$)\;
+      F.newPoint($Map$.Begin.La,$Map$.Begin.Lo+i*$D$)\;
+      \If{$i \ne 0$}{
+        F.newPoint($Map$.Begin.La-$E$,$Map$.Begin.Lo+$i$*$D$)\;
+      }
+
+    }
+    
+  }
+\end{algorithm}
+
+最终生成的航迹点集按先后顺序连直线在原地图上的情况：
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{/map-3/DJI_20250927104514_0043_D_Farm_Fin}
+  \caption{功夫菜园鸟瞰图-航迹点图}
+  \label{fig:map-3-farm-fin}
+\end{figure}
+
 \subsubsection{Dijkstra单源最短路算法}
+Dijkstra单源最短路算法是荷兰计算机科学家 E.W.Dijkstra 发现的
+一种用于求解非负权图上单个起点至单个终点的最短路径的算法。
+事实上，
+我们可以在相同时间内找到从给定源点到图中所有点的最短路径，
+因此这个算法有时也被称为单源最短路径算法\cite{ref4}。
+
+对于一个有 $n$ 个点，
+$m$ 条路的非负权图，
+其朴素实现方法的时间复杂度为 $\mathcal{O}(n^2)$。
+若使用其他数据结构处理该问题，
+可以进一步降低时间复杂度。
+如基于斐波那契堆的优化可做到 $\mathcal{O}(n \log n + m)$,
+使用优先队列或线段树维护的做法可以达到 $\mathcal{O}(m \log n)$。
+而目前理论最优实现为2025年6月15日，
+由清华大学交叉信息院段然研究团队发现的针对无向图的，
+不依赖于排序算法，
+而是融合Dijkstra与Bellman-Ford两种最短路算法的实现方式。
+其时间复杂度可缩小至 $\mathcal{O}(m \log ^{2/3} n)$\cite{ref5}。
+此时要根据图的疏密程度提前手动或解决过程中自动选择优化方式。
+
+Dijkstra算法的核心过程如下：
+
+\begin{algorithm}[H]
+  \caption{Dijkstra单源最短路算法}\label{algorithm-traditional-Dijkstra}
+  \KwData{点集 $\bf{T}$, 起点编号 $B$}
+  \KwOut{已确定最短路长度的点集 $\bf{S}$}
+
+  $Dis$[$0$ \KwTo $\bf{T}$.num] $\leftarrow$ 0\;
+  $Dis$[$B$] $\leftarrow$ 0\;
+  \While{$!T$.empty()}{
+    $Next \leftarrow$ The point in $\bf{T}$ who have the confirmed shortest path.\;
+    $S$.pushback($Next$)\;
+    \For{$i \leftarrow 0$ \KwTo $Next$.RdNum}{
+      $Dis$[$Next$.RoadData[$i$].To] $\leftarrow$ min($Dis$[$Next$.RoadData[$i$].To] , $Dis$[$Next$] $+$ $Next$.RoadData[$i$].Length)
+    }
+  }
+\end{algorithm}
+
 \subsubsection{IDA*搜索算法}
+IDA*是一种混合了迭代加深算法与A*的搜索算法。
+其中迭代加深算法是一种每次限制搜索深度(剪枝)的深度优先搜索(DFS)算法，
+而A*搜索算法是一种在带权有向图上找到单个起点与终点之间的最短路径的改进广度优先搜索(BFS)算法。
+
+由于IDA*使用了动态更新的剪枝阈值 $C$ 和估价函数 $h(x)$，
+所以其没有严格数学证明下的 $\mathcal{O}$ 时间复杂度。
+
+IDA*的实现样例（包含主搜索函数(A*,BFS)与副搜索函数(迭代加深,DFS)）：
+
+\begin{algorithm}[H]
+  \caption{IDA*搜索算法}\label{algorithm-traditional-IDAstar}
+  \KwData{估价函数 $h(X)$, 起点编号 $B$}
+  \KwOut{各点 $?$ 及其最短路长度 $?$}
+
+  $Dis$[$0$ \KwTo $\bf{T}$.num] $\leftarrow$ 0\;
+  $Dis$[$B$] $\leftarrow$ 0\;
+  \While{$!T$.empty()}{
+    $Next \leftarrow$ The point in $\bf{T}$ who have the confirmed shortest path.\;
+    $S$.pushback($Next$)\;
+    \For{$i \leftarrow 0$ \KwTo $Next$.RdNum}{
+      $Dis$[$Next$.RoadData[$i$].To] $\leftarrow$ min($Dis$[$Next$.RoadData[$i$].To] , $Dis$[$Next$] $+$ $Next$.RoadData[$i$].Length)
+    }
+  }
+\end{algorithm}
+
 \subsection{现代智能航迹规划算法}
 \subsubsection{遗传算法}
 \subsubsection{蚁群算法(ACA)}
@@ -379,7 +488,9 @@
 \newpage\section{参考文献}\begin{thebibliography}{20}
 \bibitem{ref1}中华人民共和国交通运输部.2024年交通运输行业发展统计公报[R/OL].(2025-06-12)[2025-10-04].https://xxgk.mot.gov.cn/2020/jigou/zhghs/202506/t20250610\_4170228.html.
 \bibitem{ref2}欧林联.无人机自动化巡检在城市桥梁运维中的探索和应用[J].福建建设科技,2025,(05):97-100.DOI:CNKI:SUN:FJJK.0.2025-05-024.
-\bibitem{ref3}王硕,李洋,赵蕴龙,等.无人机航迹规划算法综述[J/OL].哈尔滨工程大学学报,1-14[2025-10-04].https://link.cnki.net/urlid/23.1390.U.20250616.1544.003.
+\bibitem{ref3}王硕,李洋,赵蕴龙,等. 无人机航迹规划算法综述[J/OL]. 哈尔滨工程大学学报,1-14[2025-10-04].https://link.cnki.net/urlid/23.1390.U.20250616.1544.003.
+\bibitem{ref4}Javaid,Muhammad Adeel.Understanding Dijkstra's Algorithm[J/OL].(2013-04-10)[2025-10-18].http://dx.doi.org/10.2139/ssrn.2340905.
+\bibitem{ref5}Ran Duan, Jiayi Mao, Xiao Mao, Xinkai Shu, and Longhui Yin. 2025.Breaking the Sorting Barrier for Directed Single-Source Shortest Paths[R/OL].(2025-06-15)[2025-10-18] In Proceedings of the 57th Annual ACM Symposium on Theory of Computing (STOC '25). Association for Computing Machinery, New York, NY, USA, 36–44. https://doi.org/10.1145/3717823.3718179
 \end{thebibliography}
 %原创性声明-------------------------
 \newpage\section{原创性声明}
