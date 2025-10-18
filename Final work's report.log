@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.28)  18 OCT 2025 21:42
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.9.28)  18 OCT 2025 22:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -592,6 +592,11 @@ Package fontspec Info:
 
 
 [1]
+Overfull \hbox (6.98817pt too wide) in paragraph at lines 111--118
+\TU/TimesNewRoman(0)/m/n/10.95 worldwide, traditional manual approaches and manual drone operation methods have proven
+ []
+
+
 
 [2] (./Final work's report.toc
 
@@ -653,37 +658,37 @@ File: ./PNG_files//map-3/DJI_20250927104514_0043_D_Farm_Fin.png Graphic file (ty
 [16]
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 716--717
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 []\TU/SimSun(1)/m/n/12 中 华 人 民 共 和 国 交 通 运 输 部\TU/TimesNewRoman(0)/m/n/12 . 2024 \TU/SimSun(1)/m/n/12 年 交 通 运 输 行
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 716--717
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 \TU/SimSun(1)/m/n/12 业 发 展 统 计 公 报 \TU/TimesNewRoman(0)/m/n/12 [R/OL]. (2025-06-12)[2025-10-04].
  []
 
 
-Overfull \hbox (6.2168pt too wide) in paragraph at lines 716--717
+Overfull \hbox (6.2168pt too wide) in paragraph at lines 720--721
 \TU/TimesNewRoman(0)/m/n/12 https://xxgk.mot.gov.cn/2020/jigou/zhghs/202506/t20250610_4170228.html. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
 []\TU/SimSun(1)/m/n/12 王 硕\TU/TimesNewRoman(0)/m/n/12 , \TU/SimSun(1)/m/n/12 李 洋\TU/TimesNewRoman(0)/m/n/12 , \TU/SimSun(1)/m/n/12 赵 蕴 龙\TU/TimesNewRoman(0)/m/n/12 , \TU/SimSun(1)/m/n/12 等\TU/TimesNewRoman(0)/m/n/12 . \TU/SimSun(1)/m/n/12 无 人 机 航 迹 规 划 算 法 综
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
 \TU/SimSun(1)/m/n/12 述 \TU/TimesNewRoman(0)/m/n/12 [J/OL]. \TU/SimSun(1)/m/n/12 哈 尔 滨 工 程 大 学 学 报\TU/TimesNewRoman(0)/m/n/12 , 1-14[2025-10-04].
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 720--721
+Underfull \hbox (badness 1648) in paragraph at lines 724--725
 []\TU/TimesNewRoman(0)/m/n/12 Javaid, Muhammad Adeel. Understanding Dijkstra’s Algorithm[R/OL].
  []
 
 
-Underfull \hbox (badness 3557) in paragraph at lines 725--726
+Underfull \hbox (badness 3557) in paragraph at lines 729--730
 []\TU/SimSun(1)/m/n/12 赵 桐\TU/TimesNewRoman(0)/m/n/12 . \TU/SimSun(1)/m/n/12 无 人 机 航 迹 智 能 规 划 算 法 研 究 \TU/TimesNewRoman(0)/m/n/12 [D]. \TU/SimSun(1)/m/n/12 长 春 工 业 大 学\TU/TimesNewRoman(0)/m/n/12 ,2025.
  []
 
@@ -692,36 +697,36 @@ Underfull \hbox (badness 3557) in paragraph at lines 725--726
 [18]
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 731--734
+Underfull \hbox (badness 10000) in paragraph at lines 735--738
 
  []
 
 
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 752--760
+Underfull \hbox (badness 10000) in paragraph at lines 756--764
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 766--771
+Underfull \hbox (badness 10000) in paragraph at lines 770--775
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--788
+Underfull \hbox (badness 10000) in paragraph at lines 790--792
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--798
+Underfull \hbox (badness 10000) in paragraph at lines 798--802
 
  []
 
 
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 809--811
+Underfull \hbox (badness 10000) in paragraph at lines 813--815
 
  []
 
@@ -752,4 +757,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  93i,18n,111p,618b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Final work's report.xdv (32 pages, 291748 bytes).
+Output written on Final work's report.xdv (32 pages, 294860 bytes).
