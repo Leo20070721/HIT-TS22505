@@ -21,15 +21,18 @@
 \contentsline {subsubsection}{\numberline {4.1.3}Dijkstra单源最短路算法}{10}{}%
 \contentsline {subsubsection}{\numberline {4.1.4}IDA*搜索算法}{11}{}%
 \contentsline {subsection}{\numberline {4.2}现代智能航迹规划算法}{12}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}遗传算法}{12}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}蚁群算法(ACA)}{12}{}%
-\contentsline {subsubsection}{\numberline {4.2.3}改进灰狼算法(IGWO)}{12}{}%
-\contentsline {subsubsection}{\numberline {4.2.4}布谷鸟搜索算法(CS)}{12}{}%
-\contentsline {section}{\numberline {5}航迹平滑算法}{13}{}%
-\contentsline {subsection}{\numberline {5.1}三次样条插值法(Spline 插值)}{13}{}%
-\contentsline {subsection}{\numberline {5.2}贝塞尔曲线法(Bézier Curve)}{13}{}%
-\contentsline {section}{\numberline {6}结论}{14}{}%
-\contentsline {section}{\numberline {7}参考文献}{15}{}%
-\contentsline {section}{\numberline {8}原创性声明}{16}{}%
-\contentsline {section}{\numberline {9}致谢}{17}{}%
-\contentsline {section}{\numberline {10}附录}{18}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}概论}{12}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}遗传算法(Genetic Algorithm, GA)}{12}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}蚁群算法(Ant Colony Optimization, ACO)}{12}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}灰狼算法(GWO)}{13}{}%
+\contentsline {subsubsection}{\numberline {4.2.5}布谷鸟搜索算法(Cuckoo Search, CS)}{13}{}%
+\contentsline {subsection}{\numberline {4.3}多算法混合与优化}{14}{}%
+\contentsline {section}{\numberline {5}航迹平滑算法}{15}{}%
+\contentsline {subsection}{\numberline {5.1}航迹平滑概论}{15}{}%
+\contentsline {subsection}{\numberline {5.2}三次样条插值法(Cubic Spline Interpolation, Spline插值)}{15}{}%
+\contentsline {subsection}{\numberline {5.3}贝塞尔曲线法(Bézier Curve)}{15}{}%
+\contentsline {section}{\numberline {6}结论}{17}{}%
+\contentsline {section}{\numberline {7}参考文献}{18}{}%
+\contentsline {section}{\numberline {8}原创性声明}{20}{}%
+\contentsline {section}{\numberline {9}致谢}{21}{}%
+\contentsline {section}{\numberline {10}附录}{22}{}%
