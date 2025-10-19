@@ -1,10 +1,43 @@
 %文章初始设置----------------------------------------------------------------------------------------------------------------
-\documentclass[12pt,a4paper,oneside,UTF8]{ctexart}
+\documentclass[oneside,UTF8]{ctexart}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage[T1]{fontenc}
 \usepackage{authblk}
 \usepackage{listings}
 \usepackage[usenames,dvipsnames]{xcolor}
+
+%中文字体编排
+\setmainfont{Times New Roman}
+\usepackage{xeCJK}
+\setCJKmainfont[AutoFakeBold,AutoFakeSlant]{SimSun}
+\ctexset{
+	section={aftername=\hspace{1em},format=\heiti\centering\zihao{2}\mdseries, afterskip=0bp,beforeskip=0bp,},% 设置 section 标题为黑体、右对齐、小4号字
+	subsection={aftername=\hspace{0.5em},format=\heiti\raggedright\zihao{-3}, afterskip=0bp,beforeskip=0bp,},% 设置 subsection 标题为黑体、5号字
+	subsubsection={format=\heiti\raggedright\zihao{4}, aftername=\hspace{0.5em},afterskip=0bp,beforeskip=0bp},% 设置 subsubsection 标题为黑体、5号字
+	paragraph={format=\Simsun\raggedright\zihao{-4}, aftername=\hspace{0.5em},afterskip=0bp,beforeskip=0bp}
+}
+
+%版芯设置/页边距设置
+\usepackage{geometry}
+\geometry{a4paper,left=3cm,right=3cm,top=2.85cm,bottom=2.85cm}
+
+%页眉制作
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\fancyhf{}% 清除默认的页眉和页脚
+\fancyhead[C]{\small\songti 哈尔滨工业大学本科结课报告}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\makeatletter %双线页眉
+\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi%
+\hrule\@height 0.8pt \@width\headwidth\vskip1pt%上面线为1pt粗
+\hrule\@height 0.4pt\@width\headwidth%下面0.5pt粗
+\vskip-2\headrulewidth\vskip-1pt}%两条线的距离1pt
+\vspace{6mm}}%双线与下面正文之间的垂直间距
+\makeatother
+
+%标题间距包
+\usepackage{titlesec,kantlipsum}
 
 %照片插入
 \usepackage{graphicx, float}
@@ -14,19 +47,8 @@
 %伪代码书写
 \usepackage[ruled,linesnumbered,lined,boxed,linesnumbered]{algorithm2e}
 
-%中文字体编排
-\setmainfont{Times New Roman}
-\usepackage{xeCJK}
-\setCJKmainfont[AutoFakeBold,AutoFakeSlant]{SimSun}
-\ctexset{
-	section={aftername=\hspace{1em},format=\heiti\centering\zihao{3}\mdseries, afterskip=0bp,beforeskip=0bp,},% 设置 section 标题为黑体、右对齐、小4号字
-	subsection={aftername=\hspace{0.5em},format=\heiti\raggedright\zihao{-3}, afterskip=0bp,beforeskip=16bp,},% 设置 subsection 标题为黑体、5号字
-	subsubsection={format=\heiti\raggedright\zihao{4}, aftername=\hspace{0.5em},afterskip=0bp,beforeskip=0bp},% 设置 subsubsection 标题为黑体、5号字
-	paragraph={format=\Simsun\raggedright\zihao{-4}, aftername=\hspace{0.5em},afterskip=0bp,beforeskip=0bp}
-}
-
 %封皮作者区
-\renewcommand*{\Affilfont}{\small\it}
+\renewcommand*{\Affilfont}{\large\heiti}
 \renewcommand\Authands{ 与 } %将"and"修改为"与"
 
 %摘要与Abstract区
@@ -66,13 +88,13 @@
 }
 
 %标题区----------------------------------------------------------------------------------------------------------------
-\title{《无人机摄像及应用》结课报告\\航迹规划算法与实现}
-\author[1]{刘宇轩}
+\title{\huge\heiti\bfseries《无人机摄像及应用》结课报告\\航迹规划算法与实现}
+\author[1]{\Large\songti\bfseries 刘宇轩}
 \author[2]{李顺龙}
 \author[2]{郭亚朋}
 \author[2]{王安冬}
 \author[1]{刘一诺}
-\author[1]{何家震}
+\author[1]{\\何家震}
 \author[1]{齐露雅}
 \author[1]{石艾琳}
 \author[1]{张芮嘉}
@@ -81,13 +103,18 @@
 \affil[2]{哈尔滨工业大学\  交通科学与工程学院\  桥梁结构安全评定青年科学家工作室,\qquad 黑龙江\ 哈尔滨\ 150001}
 \affil[*]{班级、学号等信息请见文后致谢部分}
 \date{}
-
 %内容区----------------------------------------------------------------------------------------------------------------
 \begin{document}
+\titleformat{\section}{\LARGE\centering\heiti}{第\arabic{section} 章}{0.5em}{\heiti}
+\titlespacing{\section}{0cm}{10mm}{10mm}
+\titleformat{\subsection}{\Large\heiti}{\arabic{section}.\arabic{subsection}}{0.5em}{\heiti}
+\titlespacing{\subsection}{0cm}{7mm}{7mm}
+\titleformat{\subsubsection}{\large\heiti}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{0.5em}{\heiti}
+\titlespacing{\subsubsection}{0cm}{6mm}{6mm}
 %封面--------------------------------------------------------
 \pagestyle{empty}\maketitle\thispagestyle{empty}
 %摘要--------------------------------------------------------
-\newpage\setcounter{page}{1}\pagenumbering{Roman}\pagestyle{plain}\begin{abstract}
+\newpage\setcounter{page}{1}\pagenumbering{Roman}\pagestyle{fancy}\begin{abstract}
     \addcontentsline{toc}{section}{摘要}
     在全球桥梁数目与规模逐渐增大的背景下，
     传统的纯人力方式与手动操控无人机方法已经难以维持多种工作进行。
@@ -138,7 +165,7 @@
 \end{enabstract}
 \enkeywords{UAV, Flight path planning, Planning algorithm, Optimization problem}
 %目录--------------------------------------------------------
-\newpage\pagestyle{plain}
+\newpage
 \tableofcontents
 %正文--------------------------------------------------------
 
@@ -723,7 +750,9 @@ IDA*的主要实现过程：
 助力无人机技术进一步发展,
 推动我国桥梁事业向未来大步迈进。
 %参考文献库--------------------------------------------------------
-\newpage\section{参考文献}\begin{thebibliography}{20}
+\newpage\section{参考文献}
+\vspace{-5em}
+\begin{thebibliography}{20}
 \bibitem{ref1}中华人民共和国交通运输部. 2024年交通运输行业发展统计公报[R/OL]. (2025-06-12)[2025-10-04]. https://xxgk.mot.gov.cn/2020/jigou/zhghs/202506/t20250610\_4170228.html.
 \bibitem{ref2}欧林联. 无人机自动化巡检在城市桥梁运维中的探索和应用[J]. 福建建设科技, 2025,(05):97-100. DOI:CNKI:SUN:FJJK.0.2025-05-024.
 \bibitem{addref1}Aabid Abdul, Parveez Bisma, Parveen Nagma, et al. Reviews on Design and Development of Unmanned Aerial Vehicle (Drone) for Different Applications[J]. Journal of Mechanical Engineering Research and Developments. (2022).45.53-69.
@@ -739,8 +768,6 @@ IDA*的主要实现过程：
 \end{thebibliography}
 %原创性声明-------------------------
 \newpage\section{原创性声明}
-~\\
-~\\
 本人郑重声明：
 
 所呈交的结课报告/论文是我个人在小组合作与导师指导下进行研究工作所取得的成果。
