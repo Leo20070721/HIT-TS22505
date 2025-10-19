@@ -36,3 +36,5 @@
 \contentsline {section}{\numberline {8}原创性声明}{20}{}%
 \contentsline {section}{\numberline {9}致谢}{21}{}%
 \contentsline {section}{\numberline {10}附录}{22}{}%
+\contentsline {subsection}{\numberline {10.1}本报告的在线版本}{22}{}%
+\contentsline {subsection}{\numberline {10.2}相关英文文献翻译版}{22}{}%

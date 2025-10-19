@@ -6,11 +6,15 @@
 \usepackage{listings}
 \usepackage[usenames,dvipsnames]{xcolor}
 
+%照片插入
 \usepackage{graphicx, float}
 \graphicspath{ {./PNG_files} }
+\numberwithin{figure}{section} %按章分配图片编号
 
+%伪代码书写
 \usepackage[ruled,linesnumbered,lined,boxed,linesnumbered]{algorithm2e}
 
+%中文字体编排
 \setmainfont{Times New Roman}
 \usepackage{xeCJK}
 \setCJKmainfont[AutoFakeBold,AutoFakeSlant]{SimSun}
@@ -21,9 +25,11 @@
 	paragraph={format=\Simsun\raggedright\zihao{-4}, aftername=\hspace{0.5em},afterskip=0bp,beforeskip=0bp}
 }
 
+%封皮作者区
 \renewcommand*{\Affilfont}{\small\it}
-\renewcommand\Authands{ 与 }
+\renewcommand\Authands{ 与 } %将"and"修改为"与"
 
+%摘要与Abstract区
 \newcommand{\enabstractname}{Abstract}
 \newenvironment{enabstract}{
   \addcontentsline{toc}{section}{Abstract}
@@ -34,6 +40,7 @@
 \newcommand\cnkeywords[1]{\par\noindent{\heiti 关键字}: #1}
 \newcommand\enkeywords[1]{\par\noindent\textbf{Keywords}: #1}
 
+%文献引用部分
 \makeatletter
 \renewcommand\@biblabel[1]{[#1]\hfill}
 \makeatother
@@ -62,8 +69,8 @@
 \title{《无人机摄像及应用》结课报告\\航迹规划算法与实现}
 \author[1]{刘宇轩}
 \author[2]{李顺龙}
-\author[2]{郭亚鹏}
-\author[2]{王安东}
+\author[2]{郭亚朋}
+\author[2]{王安冬}
 \author[1]{刘一诺}
 \author[1]{何家震}
 \author[1]{齐露雅}
@@ -747,13 +754,13 @@ IDA*的主要实现过程：
 日期:\qquad 年\qquad 月\qquad 日
 %致谢-------------------------
 \newpage\section{致谢}
-感谢导师李顺龙老师和郭亚鹏老师,
+感谢导师李顺龙老师和郭亚朋老师,
 他们开展的《无人机摄像及应用》(TS22505)课程使我受益匪浅。
 我学到了很多新的知识,
 了解到了无人机摄像过程中的各种问题与解决方案,
 还见到了许许多多的新兴路径规划算法。
 
-同时感谢王安东老师,
+同时感谢王安冬老师,
 他与前述两位老师一起负责了实操课的教学,
 采用多种方式助力我们练习无人机飞行与拍摄活动。
 最后他们还拿出了实验室的大疆经纬M300无人机给我们体验飞行,
@@ -806,6 +813,9 @@ IDA*的主要实现过程：
 
 %附录-------------------------
 \newpage\section{附录}
+\subsection{本报告的在线版本}
+请访问 https://github.com/Leo20070721/HIT-TS22505 查看
+\subsection{相关英文文献翻译版}
 《Understanding Dijkstra's Algorithm》. Javaid, Muhammad Adeel. 
 
 电子版详稿请参考 https://doi.org/10.2139/ssrn.2340905
